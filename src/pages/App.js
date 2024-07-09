@@ -11,7 +11,7 @@ import { Container } from './styles';
 function App() {
 
   const [currentRepo, setCurrentRepo] = useState('');
-  const [repos, setRepos] = useState([]);
+  let [repos, setRepos] = useState([]);
 
 
   const handleSearchRepo = async () => {
@@ -34,9 +34,8 @@ function App() {
   }
 
   const handleRemoveRepo = (id) => {
-    console.log('Removendo registro', id);
-
-    // utilizar filter.
+    repos = repos.filter(repo => repo.id !== id);
+    return
   }
 
 
